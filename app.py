@@ -166,9 +166,9 @@ def main():
             st.success('Mental Health Risk is Low')
 
     
-    if st.button("About"):
-        st.text("Let's Learn")
-        st.text("Built with Streamlit")
+    # if st.button("About"):
+    #     st.text("Let's Learn")
+    #     st.text("Built with Streamlit")
 
 if __name__ == '__main__':
     main()
