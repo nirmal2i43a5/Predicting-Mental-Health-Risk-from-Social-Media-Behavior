@@ -1,22 +1,31 @@
-  
 import os
 import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st 
 
-
-from utils.data_loader import lr_model, X_test, y_test
+from PIL import Image
+from utils.data_loader import lr_model, X_test, y_test, dt_model, dt_model, rf_model, xgb_model, nb_model
 from utils.predict import predict_mental_health_risk
 from utils.performance_metrics import get_model_metrics, display_model_metrics
 from utils.confusion_matrix import display_confusion_matrix
 
-# Dictionary for model selection
+
+file_path = "mental_health.png"
+if os.path.exists(file_path):
+    image = Image.open(file_path)
+else:
+    print(f"File '{file_path}' not found!")
+
+st.image(image, caption="Image")
+
+
 models = {
     "Logistic Regression": lr_model,
-    # "Decision Tree": dt_model,
-    # "Random Forest": rf_model,
-    # "XGBoost": xgb_model
+    "Decision Tree": dt_model,
+    "Random Forest": rf_model,
+    "Naive Bayes": nb_model,
+    "XGBoost": xgb_model
 }
 
 
@@ -72,7 +81,7 @@ def main():
     # -------------------------
     model_choice = st.selectbox("Select Prediction Algorithm", list(models.keys()))
     print(model_choice)
-    selected_model = models[model_choice]
+    # selected_model = models[model_choice]
     
     # -------------------------
     # Input Features Section
@@ -131,26 +140,26 @@ def main():
     # Prediction & Results Display
     # -------------------------
     if st.button("Predict"):
-        selected_model = models[model_choice]
-        predicted_label = predict_mental_health_risk( age, gender, relationship_status, 
+        # selected_model = models[model_choice]
+        predicted_label = predict_mental_health_risk( 
+                                                model_choice, age, gender, relationship_status, 
                                                occupation_status, use_social_media, 
                                                daily_social_media_time, Discord, 
                                                Facebook, Instagram, Pinterest, Reddit, 
-                                               Snapchat, TikTok, Twitter, YouTube)
+                                               Snapchat, TikTok, Twitter, YouTube
+                                               )
         
-    
+        print(predicted_label,'-------------I am testing predicted label-----------')
         if predicted_label == 1:
             st.error('Menatl Health Risk is High')
         else:
             st.success('Mental Health Risk is Low')
 
-        metrics = get_model_metrics(selected_model, X_test, y_test)
+        metrics = get_model_metrics(model_choice, X_test, y_test)
         display_model_metrics(model_choice,metrics)
-        display_confusion_matrix(lr_model, X_test, y_test)
+        display_confusion_matrix(model_choice, X_test, y_test)
     
-    # if st.button("About"):
-    #     st.text("Let's Learn")
-    #     st.text("Built with Streamlit")
+
 
 if __name__ == '__main__':
     main()
