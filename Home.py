@@ -3,21 +3,27 @@ import numpy as np
 import pickle
 import pandas as pd
 import streamlit as st 
+from streamlit import session_state
 
 from PIL import Image
 from utils.data_loader import lr_model, X_test, y_test, dt_model, dt_model, rf_model, xgb_model, nb_model
 from utils.predict import predict_mental_health_risk
 from utils.performance_metrics import get_model_metrics, display_model_metrics
 from utils.confusion_matrix import display_confusion_matrix
+# from user_auth import authentication
+# from modules.nav import MenuButtons
+from pages.Account import get_roles
 
 
-file_path = "mental_health.png"
-if os.path.exists(file_path):
-    image = Image.open(file_path)
-else:
-    print(f"File '{file_path}' not found!")
 
-st.image(image, caption="Image")
+def cover_image():
+    file_path = "mental_health.png"
+    if os.path.exists(file_path):
+        image = Image.open(file_path)
+    else:
+        print(f"File '{file_path}' not found!")
+
+    st.image(image, caption="Image")
 
 
 models = {
@@ -62,12 +68,28 @@ time_choices = {
     'Between 4 and 5 hours': 4.5,
     'More than 5 hours': 5.5
 }
+#current directory
+def authentication():
+    if 'authentication_status' not in session_state:
+        st.switch_page('pages/Account.py')
 
+    # MenuButtons(get_roles())
+    
+    # Protected content in home page.
+    if session_state.authentication_status:
+        st.write('')
+    else:
+        st.write('Please log in on login page.') 
+        
 
-
-                
 def main():
-    # st.title("Social Media Mental Health Analysis")
+    cover_image()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    print(current_dir,'-----------------current dir------------------')
+
+    # Load the authentication module
+    authentication()
+
     
     html_temp = """
     <div style="background-color:blue;padding:10px;border-radius:10px">
@@ -162,4 +184,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    
+    if session_state["authentication_status"]:
+        main()
+    else:
+        st.header("Please log in to access this application.")
+        st.markdown(
+            "[Login](Account)"
+            )
