@@ -59,8 +59,9 @@ occupation_choices = {
 }
 
 use_social_media_choices = {
-    'No': 0,
-    'Yes': 1
+    'Yes': 1,
+    'No': 0
+    
 }
 
 time_choices = {
