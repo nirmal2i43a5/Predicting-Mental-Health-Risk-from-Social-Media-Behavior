@@ -40,7 +40,10 @@ gender_choices = {
     'Female': 1,
     'Non-binary': 2
 }
-
+social_media_choices = {
+    'Yes': 1,
+    'No': 0,
+}
 relationship_choices = {
     'Single': 0,
     'Relationship': 1,
@@ -131,31 +134,129 @@ def main():
         daily_social_media_time_choice = st.selectbox("Daily Social Media Time", list(time_choices.keys()), index=0)
         daily_social_media_time = time_choices[daily_social_media_time_choice]
     
-    col1, col2 = st.columns(2)
+    
+
+    # Row 1: Discord, Facebook, Instagram
+    col1, col2, col3 = st.columns(3)
+
     with col1:
-        Discord = st.number_input("Discord", min_value=0, value=0, step=1)
+        Discord_choice = st.radio(
+            "Use Discord",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Discord = 1 if Discord_choice == "Yes" else 0
+
     with col2:
-        Facebook = st.number_input("Facebook", min_value=0, value=0, step=1)
-        
-    col1, col2 = st.columns(2)
+        Facebook_choice = st.radio(
+            "Use Facebook",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Facebook = 1 if Facebook_choice == "Yes" else 0
+
+    with col3:
+        Instagram_choice = st.radio(
+            "Use Instagram",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Instagram = 1 if Instagram_choice == "Yes" else 0
+
+    # Row 2: Pinterest, Reddit, Snapchat
+    col1, col2, col3 = st.columns(3)
+
     with col1:
-        Instagram = st.number_input("Instagram", min_value=0, value=0, step=1)
+        Pinterest_choice = st.radio(
+            "Use Pinterest",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Pinterest = 1 if Pinterest_choice == "Yes" else 0
+
     with col2:
-        Pinterest = st.number_input("Pinterest", min_value=0, value=0, step=1)
-        
-    col1, col2 = st.columns(2)
+        Reddit_choice = st.radio(
+            "Use Reddit",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Reddit = 1 if Reddit_choice == "Yes" else 0
+
+    with col3:
+        Snapchat_choice = st.radio(
+            "Use Snapchat",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Snapchat = 1 if Snapchat_choice == "Yes" else 0
+
+    # Row 3: TikTok, Twitter, YouTube
+    col1, col2, col3 = st.columns(3)
+
     with col1:
-        Reddit = st.number_input("Reddit", min_value=0, value=0, step=1)
+        TikTok_choice = st.radio(
+            "Use TikTok",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        TikTok = 1 if TikTok_choice == "Yes" else 0
+
     with col2:
-        Snapchat = st.number_input("Snapchat", min_value=0, value=0, step=1)
+        Twitter_choice = st.radio(
+            "Use Twitter",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        Twitter = 1 if Twitter_choice == "Yes" else 0
+
+    with col3:
+        YouTube_choice = st.radio(
+            "Use YouTube",
+            options=["Yes", "No"],
+            horizontal=True
+        )
+        YouTube = 1 if YouTube_choice == "Yes" else 0
+
+    # # Debugging : Display the values for debugging or further processing
+    # st.write("Discord:", Discord)
+    # st.write("Facebook:", Facebook)
+    # st.write("Instagram:", Instagram)
+    # st.write("Pinterest:", Pinterest)
+    # st.write("Reddit:", Reddit)
+    # st.write("Snapchat:", Snapchat)
+    # st.write("TikTok:", TikTok)
+    # st.write("Twitter:", Twitter)
+    # st.write("YouTube:", YouTube)
+
         
-    col1, col2 = st.columns(2)
-    with col1:
-        TikTok = st.number_input("TikTok", min_value=0, value=0, step=1)
-    with col2:
-        Twitter = st.number_input("Twitter", min_value=0, value=0, step=1)
+
+
+    # col1, col2 = st.columns(2)
+    
+    # with col1:
+    #     Discord = st.number_input("Discord", min_value=0, value=0, step=1)
+    # with col2:
+    #     Facebook = st.number_input("Facebook", min_value=0, value=0, step=1)
         
-    YouTube = st.number_input("YouTube", min_value=0, value=0, step=1)
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     Instagram = st.number_input("Instagram", min_value=0, value=0, step=1)
+    # with col2:
+    #     Pinterest = st.number_input("Pinterest", min_value=0, value=0, step=1)
+        
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     Reddit = st.number_input("Reddit", min_value=0, value=0, step=1)
+    # with col2:
+    #     Snapchat = st.number_input("Snapchat", min_value=0, value=0, step=1)
+        
+    # col1, col2 = st.columns(2)
+    # with col1:
+    #     TikTok = st.number_input("TikTok", min_value=0, value=0, step=1)
+    # with col2:
+    #     Twitter = st.number_input("Twitter", min_value=0, value=0, step=1)
+        
+    # YouTube = st.number_input("YouTube", min_value=0, value=0, step=1)
     
     result = ""
     # -------------------------
