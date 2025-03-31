@@ -273,7 +273,6 @@ def main():
                                                Snapchat, TikTok, Twitter, YouTube
                                                )
         
-        print(predicted_label,'-------------I am testing predicted label-----------')
         if predicted_label == 1:
             st.error('Menatl Health Risk is High')
         else:
@@ -287,9 +286,12 @@ def main():
 
 if __name__ == '__main__':
     
-    if session_state["authentication_status"]:
+    # if session_state["authentication_status"]:
+    #     main()
+    if "authentication_status" in session_state and session_state["authentication_status"]:
         main()
-    else:
+        
+    if "authentication_status" not in session_state or not session_state["authentication_status"]:
         st.header("Please log in to access this application.")
         st.markdown(
             "[Login](Account)"
