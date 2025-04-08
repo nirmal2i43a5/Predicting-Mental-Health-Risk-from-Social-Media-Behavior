@@ -60,3 +60,8 @@ tzdata==2025.2
 urllib3==2.3.0
 watchdog==6.0.0
 xgboost==3.0.0
+fastapi==0.110.0
+uvicorn==0.27.1
+python-multipart==0.0.9
+pydantic==2.6.3
+email-validator==2.1.0
