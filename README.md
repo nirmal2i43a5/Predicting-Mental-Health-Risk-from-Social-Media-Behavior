@@ -1,7 +1,6 @@
 # 🧠 Mental Health Risk Prediction App
 
 - This Streamlit-powered web app helps identify the risk of mental health issues based on social media usage and demographic information using multiple machine learning models.
-
 - From data preprocessing to model deployment, this project showcases a full data science pipeline and an interactive web app.
 
 ---
@@ -13,17 +12,6 @@
 * **Robust Evaluation**: Accuracy, Precision, Recall, F1-Score, ROC-AUC, and Confusion Matrix.
 * **Interactive Deployment**: Streamlit app with login authentication for real-time predictions.
 * **Social Impact**: Early detection of mental health risks through data-driven insights.
-
----
-
-## 🛠️ Tech Stack
-
-* **Language**: Python
-* **Data**: Pandas, NumPy
-* **Modeling**: scikit-learn, XGBoost
-* **Deployment**: Streamlit, PIL
-* **Notebook**: Jupyter
-* **Version Control**: Git, GitHub
 
 ---
 
