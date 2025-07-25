@@ -1,5 +1,91 @@
+
+
+# ===========================
+# Python & Jupyter Notebooks
+# ===========================
+notes/
+*.py[cod]
+__pycache__/
+*.ipynb_checkpoints/
+*.ipynb~
+
+
+
+# ===========================
+# Virtual Environments
+# ===========================
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+# ===========================
+# IDE & Editor Directories
+# ===========================
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.Rproj
+*.Rhistory
+*.RData
+
+# ===========================
+# System Files
+# ===========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ===========================
+# Logs & Temporary Files
+# ===========================
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+*.pid
+*.seed
+*.orig
+*.rej
+*.patch
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+debug/
+
+# ===========================
+# Environment & Credentials
+# ===========================
+.env
+.env.*
+*.env
+*.env.local
+*.env.*.local
+*.envrc
+*.envrc.local
+secrets.json
+config.json
+credentials.json
+*.pem
+*.key
+*.crt
+*.p12
+
+# ===========================
+# Data Version Control (DVC) Files
+# ===========================
+.dvc/
+.dvcignore
+.cache/
+
 env/
 notes/
 env2/
 
-# .config.yaml
+.config.yaml
