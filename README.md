@@ -1,5 +1,8 @@
 # 🧠 Mental Health Risk Prediction App
 
+![Predicting Mental Health](https://github.com/user-attachments/assets/849b8e9d-eaf8-4f48-bf66-79ea3e5806ad)
+
+
 - This Streamlit-powered web app helps predicting the risk of mental health issues based on social media usage and demographic information using multiple machine learning models.
 - From data preprocessing to model deployment, this project showcases a full data science pipeline and an interactive web app
 
