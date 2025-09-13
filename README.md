@@ -1,4 +1,4 @@
-# 🧠 Mental Health Risk Prediction App
+#  Mental Health Risk Prediction App
 
 ![Predicting Mental Health](https://github.com/user-attachments/assets/a96fb2cf-f647-4cb2-9f57-20f1246eb19b)
 
@@ -17,7 +17,7 @@
 
 
 
-## 💻 Installation & Usage
+##  Installation & Usage
 
 1. **Clone the repo**
    ```
@@ -38,7 +38,7 @@
    ```
 
 
-## 🎯 How It Works
+##  How It Works
 
 1. **Data Preprocessing**: Handle missing values, encode categorical features, normalize inputs.
 2. **Exploratory Data Analysis**: Visualize data distributions, correlations, and platform usage insights.
