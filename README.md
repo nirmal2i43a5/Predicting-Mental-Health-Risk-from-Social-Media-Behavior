@@ -7,7 +7,7 @@
 
 
 
-## 🚀 Key Highlights
+## Key Highlights
 
 * **Complete ML Workflow**: Data cleaning, EDA, feature engineering, model training, and evaluation.
 * **Model Portfolio**: Logistic Regression, Decision Tree, Random Forest, Naive Bayes, and XGBoost.
