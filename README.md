@@ -1,13 +1,20 @@
-# 🧠 Mental Health Risk Prediction App
+# Mental Health Risk Prediction App
 
 ![Predicting Mental Health](https://github.com/user-attachments/assets/a96fb2cf-f647-4cb2-9f57-20f1246eb19b)
 
 - This Streamlit-powered web app helps predicting the risk of mental health issues based on social media usage and demographic information using multiple machine learning models.
 - From data preprocessing to model deployment, this project showcases a full data science pipeline and an interactive web app
 
+# Summary : 
+- Built an ML pipeline to predict mental health risks from social media usage and demographic data.
+
+- Achieved 71.7% accuracy with tuned logistic regression, outperforming more complex models like tree-based models.
+
+- Delivered insights on model interpretability and dataset limitations, showing the values of simpler models in certain domains.
+  
 ---
 
-## 🚀 Key Highlights
+## Key Highlights
 
 * **Complete ML Workflow**: Data cleaning, EDA, feature engineering, model training, and evaluation.
 * **Model Portfolio**: Logistic Regression, Decision Tree, Random Forest, Naive Bayes, and XGBoost.
@@ -17,7 +24,7 @@
 
 ---
 
-## 💻 Installation & Usage
+## Installation & Usage
 
 1. **Clone the repo**
    ```
@@ -39,7 +46,7 @@
 
 ---
 
-## 🎯 How It Works
+## How It Works
 
 1. **Data Preprocessing**: Handle missing values, encode categorical features, normalize inputs.
 2. **Exploratory Data Analysis**: Visualize data distributions, correlations, and platform usage insights.
